@@ -1,7 +1,14 @@
+/* 
+    ================================
+        Best Viewed In Full Page
+    ================================
+*/
 
+/* Hover over a card to flip, can tab too. */
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+/* default */
 *,
 *::after,
 *::before {
@@ -10,10 +17,11 @@
   box-sizing: border-box;
 }
 
+/* body */
 body {
   min-height: 100vh;
   padding: 40px;
-
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -23,6 +31,7 @@ body {
   font-family: "Lato", "Segoe Ui", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* .flip-card-container */
 .flip-card-container {
   --hue: 150;
   --primary: hsl(var(--hue), 50%, 50%);
@@ -30,7 +39,7 @@ body {
   --white-2: hsl(0, 0%, 80%);
   --dark: hsl(var(--hue), 25%, 10%);
   --grey: hsl(0, 0%, 50%);
-
+  cursor: pointer;
   width: 310px;
   height: 500px;
   margin: 40px;
@@ -38,6 +47,7 @@ body {
   perspective: 1000px;
 }
 
+/* .flip-card */
 .flip-card {
   width: inherit;
   height: inherit;
@@ -47,11 +57,13 @@ body {
   transition: .6s .1s;
 }
 
+/* hover and focus-within states */
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
   transform: rotateY(180deg);
 }
 
+/* .card-... */
 .card-front,
 .card-back {
   width: 100%;
@@ -71,20 +83,24 @@ body {
   align-items: center;
 }
 
+/* .card-front */
 .card-front {
   transform: rotateY(0deg);
   z-index: 2;
 }
 
+/* .card-back */
 .card-back {
   transform: rotateY(180deg);
   z-index: 1;
 }
 
+/* figure */
 figure {
   z-index: -1;
 }
 
+/* figure, .img-bg */
 figure,
 .img-bg {
   position: absolute;
@@ -95,11 +111,13 @@ figure,
   height: 100%;
 }
 
+/* img */
 img {
   height: 100%;
   border-radius: 24px;
 }
 
+/* figcaption */
 figcaption {
   display: block;
 
@@ -121,7 +139,7 @@ figcaption {
   background: hsla(var(--hue), 25%, 10%, .5);
 }
 
-
+/* .img-bg */
 .img-bg {
   background: hsla(var(--hue), 25%, 10%, .5);
 }
@@ -151,6 +169,7 @@ figcaption {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
 }
 
+/* hover state */
 .flip-card-container:hover .card-front .img-bg::before {
   width: 6px;
   border-left-color: var(--primary);
@@ -203,6 +222,7 @@ li:not(:last-child)::after {
   opacity: .2;
 }
 
+/* button */
 button {
   font-family: inherit;
   font-weight: bold;
@@ -230,6 +250,7 @@ button:active {
   transform: translate(2px);
 }
 
+/* .design-container */
 .design-container {
   --tr: 90;
   --op: .5;
@@ -245,6 +266,7 @@ button:active {
   pointer-events: none;
 }
 
+/* .design */
 .design {
   display: block;
 
@@ -327,6 +349,7 @@ button:active {
   top: 56%;
 }
 
+/* states */
 button:hover+.design-container,
 button:active+.design-container,
 button:focus+.design-container {
